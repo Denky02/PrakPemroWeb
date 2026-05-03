@@ -1,0 +1,106 @@
+<html>
+<head>
+  <title>Pendaftaran Kursus</title>
+</head>
+<body>
+
+<table width="450" border="1" cellspacing="0" cellpadding="0" align="center">
+
+  <tr>
+    <td colspan="2" bgcolor="skyblue" align="center" >
+      <font color="red"><b><h3>Pendaftaran Kursus</h3></b></font>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2" bgcolor="white">
+      <table width="100%" cellpadding="4" cellspacing="2">
+
+        <tr>
+          <td colspan="2"><b>Data Diri</b></td>
+        </tr>
+
+        <tr>
+          <td width="140">Nama</td>
+          <td><input type="text" size="25"></td>
+        </tr>
+
+        <tr>
+          <td>Nim</td>
+          <td><input type="text" size="25"></td>
+        </tr>
+
+        <tr>
+          <td>E-mail</td>
+          <td><input type="text" size="25"></td>
+        </tr>
+
+        <tr>
+          <td>Tanggal Lahir</td>
+          <td><input type="date" size="25"></td>
+        </tr>
+
+        <tr>
+          <td>Jenis Kelamin</td>
+          <td>
+            <input type="radio" name="jk" value="laki"> Laki-laki<br>
+            <input type="radio" name="jk" value="perempuan"> Perempuan
+          </td>
+        </tr>
+
+        <tr>
+          <td>Pilih Program Kursus</td>
+          <td>
+            <input type="checkbox" name="kursus" value="cs"> C#<br>
+            <input type="checkbox" name="kursus" value="java"> Java<br>
+            <input type="checkbox" name="kursus" value="sql"> SQL<br>
+            <input type="checkbox" name="kursus" value="html"> HTML dan PHP
+          </td>
+        </tr>
+
+        <tr>
+          <td>Pilihan Hari/Jam Kursus</td>
+          <td>
+            <select>
+              <option>Senin - Rabu/09.00 - 11.00</option>
+              <option>Senin - Rabu/13.00 - 15.00</option>
+              <option>Kamis - Sabtu/09.00 - 11.00</option>
+              <option>Kamis - Sabtu/13.00 - 15.00</option>
+            </select>
+          </td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2" bgcolor="salmon">
+      <table width="100%" cellpadding="4" cellspacing="2">
+
+        <tr>
+          <td><b>Komentar Anda</b></td>
+        </tr>
+
+        <tr>
+          <td>
+            <textarea rows="5" cols="40"></textarea>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <input type="reset" value="Reset">
+            <input type="submit" value="Submit">
+            <input type="button" value="Cancel">
+          </td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+
+</table>
+
+</body>
+</html>
