@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background: #f5f5f3;
+      color: #1a1a1a;
+      min-height: 100vh;
+    }
+
+    .corner { position: fixed; width: 30px; height: 30px; z-index: 9999; }
+    .corner-tl { top: 0; left: 0;    border-top: 5px solid #222; border-left: 5px solid #222; }
+    .corner-tr { top: 0; right: 0;   border-top: 5px solid #222; border-right: 5px solid #222; }
+    .corner-bl { bottom: 0; left: 0; border-bottom: 5px solid #222; border-left: 5px solid #222; }
+    .corner-br { bottom: 0; right: 0;border-bottom: 5px solid #222; border-right: 5px solid #222; }
+
+    .navbar {
+      border-bottom: 1px solid #d8d8d8;
+      padding: 6px 20px;
+      background: #efefef !important;
+      flex-wrap: nowrap !important;
+    }
+    .navbar-brand {
+      font-family:  'Georgia', serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #222 !important;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-left: 24px;
+    }
+    .navbar-collapse { display: flex !important; flex-basis: auto !important; flex-grow: 1 !important; }
+    .navbar-nav { flex-direction: row !important; margin-left: auto; align-items: center; gap: 2px; }
+    .navbar-toggler { display: none !important; }
+    .nav-link {
+      font-size: 0.55rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #666 !important;
+      padding: 2px 8px !important;
+      font-family: 'Lato', sans-serif;
+      white-space: nowrap;
+    }
+    .nav-link:hover { color: #000 !important; }
+    .nav-link.active-nav {
+      border: 1px solid #999;
+      border-radius: 6px;
+      color: #222 !important;
+      padding: 2px 10px !important;
+    }
+
+    .page-content {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 64px 24px 80px;
+    }
+
+    .section-label {
+      font-size: 0.65rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #111;
+      line-height: 1.1;
+      margin-bottom: 14px;
+    }
+    .section-title em { font-style: italic; font-weight: 400; }
+    .section-desc {
+      font-size: 0.92rem;
+      color: #666;
+      line-height: 1.8;
+      max-width: 520px;
+      margin-bottom: 52px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    @media (max-width: 560px) {
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+
+    .contact-card {
+      background: #fff;
+      border-radius: 2px;
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.25s, box-shadow 0.25s;
+      border-bottom: 3px solid transparent;
+    }
+    .contact-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      color: inherit;
+      text-decoration: none;
+    }
+    .contact-card.email:hover { border-bottom-color: #555; }
+    .contact-card.whatsapp:hover { border-bottom-color: #25D366; }
+
+    .card-icon-wrap {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+    .email .card-icon-wrap { background: #f0f0f0; color: #333; }
+    .whatsapp .card-icon-wrap { background: #e8faf0; color: #25D366; }
+
+    .card-label {
+      font-size: 0.6rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #aaa;
+      margin-bottom: 4px;
+    }
+    .card-value {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #111;
+      word-break: break-all;
+    }
+    .card-hint {
+      font-size: 0.75rem;
+      color: #aaa;
+      margin-top: 4px;
+    }
+
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #1a1a1a;
+      color: #fff;
+      border: none;
+      padding: 11px 24px;
+      font-size: 0.65rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-family: 'Lato', sans-serif;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: background 0.2s, transform 0.2s;
+      margin-top: 8px;
+    }
+    .btn-back:hover {
+      background: #333;
+      color: #fff;
+      transform: translateX(-3px);
+    }
+  </style>
+</head>
+<body>
+
+<div class="corner corner-tl"></div>
+<div class="corner corner-tr"></div>
+<div class="corner corner-bl"></div>
+<div class="corner corner-br"></div>
+
+<nav class="navbar navbar-expand-lg navbar-light px-2">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="PRAK601_MuhammadRizkyRamadhani_2510817210004.html">MeowGraphy</a>
+    <div class="navbar-collapse">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="PRAK601_MuhammadRizkyRamadhani_2510817210004.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="AboutMe.html">About Me</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://www.linkedin.com/in/muhammad-rizky-ramadhani-203880371" target="_blank">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link active-nav" href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="page-content">
+
+  <p class="section-label">Get In Touch</p>
+  <h1 class="section-title">Contact <em>Me</em></h1>
+  <p class="section-desc">
+    Tertarik untuk berkolaborasi atau sekadar menyapa? Jangan ragu 
+    kamu bisa menghubungi saya melalui email maupun WhatsApp di bawah ini.
+    Saya akan senang mendengar kabar darimu!
+  </p>
+
+  <div class="contact-grid">
+
+    <div class="contact-card email">
+      <div class="card-icon-wrap"><i class="fas fa-envelope"></i></div>
+      <div>
+        <div class="card-label">Email</div>
+        <div class="card-value">rizkyramadhan05214@gmail.com</div>
+        <div class="card-hint">Hubungi saya melalui email</div>
+      </div>
+    </div>
+
+    <div class="contact-card whatsapp">
+      <div class="card-icon-wrap"><i class="fab fa-whatsapp"></i></div>
+      <div>
+        <div class="card-label">WhatsApp</div>
+        <div class="card-value">+62 565 443 2994</div>
+        <div class="card-hint">Hubungi saya melalui WhatsApp</div>
+      </div>
+    </div>
+
+  </div>
+  <a href="PRAK601_MuhammadRizkyRamadhani_2510817210004.html" class="btn-back">
+    <i class="fas fa-arrow-left"></i> Kembali ke Halaman Utama
+  </a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

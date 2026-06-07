@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PRAK601_MuhammadRizkyRamadhani_2510817210004</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Georgia', serif;
+      color: #222;
+      background: #fff;
+    }
+
+    .corner {
+      position: fixed;
+      width: 30px;
+      height: 30px;
+      z-index: 9999;
+    }
+    .corner-tl { top: 0;    left: 0;    border-top: 5px solid #222; border-left: 5px solid #222; }
+    .corner-tr { top: 0;    right: 0;   border-top: 5px solid #222; border-right: 5px solid #222; }
+    .corner-bl { bottom: 0; left: 0;    border-bottom: 5px solid #222; border-left: 5px solid #222; }
+    .corner-br { bottom: 0; right: 0;   border-bottom: 5px solid #222; border-right: 5px solid #222; }
+
+    .navbar {
+      border-bottom: 1px solid #d8d8d8;
+      padding: 6px 20px;
+      background: #efefef !important;
+      flex-wrap: nowrap !important;
+    }
+    .navbar-brand {
+      font-family:  'Georgia', serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #222 !important;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-left: 24px;
+    }
+    .navbar-collapse {
+      display: flex !important;
+      flex-basis: auto !important;
+      flex-grow: 1 !important;
+    }
+    .navbar-nav {
+      flex-direction: row !important;
+      margin-left: auto;
+      align-items: center;
+      gap: 2px;
+    }
+    .navbar-toggler { display: none !important; }
+    .nav-link {
+      font-size: 0.55rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #666 !important;
+      padding: 2px 8px !important;
+      font-family: 'Lato', sans-serif;
+      white-space: nowrap;
+    }
+    .nav-link:hover { color: #000 !important; }
+    .nav-item:first-child .nav-link {
+      color: #222 !important;
+    }
+    .nav-link.active-nav {
+      border: 1px solid #999;
+      border-radius: 6px;
+      color: #222 !important;
+      padding: 2px 10px !important;
+    }
+
+    .hero {
+      padding: 56px 0 36px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      font-family: 'Georgia', serif;
+      margin-bottom: 8px;
+    }
+    .hero p.tagline {
+      font-size: 0.95rem;
+      color: #444;
+      margin-bottom: 6px;
+    }
+    .hero p.sub {
+      font-size: 0.65rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #888;
+    }
+
+    .filter-tabs {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+      margin: 24px 0 28px;
+      flex-wrap: wrap;
+    }
+    .filter-tabs button {
+      background: none;
+      border: none;
+      font-size: 0.8rem;
+      color: #777;
+      letter-spacing: 1px;
+      cursor: pointer;
+      padding: 4px 2px;
+      font-family: Arial, sans-serif;
+    }
+    .filter-tabs button.active {
+      border: 1px solid #aaa;
+      border-radius: 50px;
+      padding: 4px 14px;
+      color: #222;
+    }
+    .filter-tabs button:hover { color: #222; }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 4px;
+      margin-bottom: 60px;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      aspect-ratio: 1 / 1;
+      background: #ddd;
+      cursor: pointer;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+      filter: grayscale(10%);
+    }
+    .gallery-item:hover img {
+      transform: scale(1.06);
+      filter: grayscale(0%);
+    }
+
+    footer {
+      border-top: 1px solid #e0e0e0;
+      padding: 28px 0 22px;
+      text-align: center;
+    }
+    footer .brand {
+      font-family: 'Georgia', serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    footer .copy {
+      font-size: 0.68rem;
+      color: #aaa;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+    footer .social-icons a {
+      color: #888;
+      margin: 0 6px;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    footer .social-icons a:hover { color: #222; }
+  </style>
+</head>
+<body>
+
+<div class="corner corner-tl"></div>
+<div class="corner corner-tr"></div>
+<div class="corner corner-bl"></div>
+<div class="corner corner-br"></div>
+
+  <nav class="navbar navbar-expand-lg navbar-light px-2">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">MeowGraphy</a>
+      <div class="navbar-collapse" id="mainNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active-nav" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="AboutMe.html">About Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://www.linkedin.com/in/muhammad-rizky-ramadhani-203880371" target="_blank">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <h1>Hi. Hello.. I Am Dhani - NIM 2510817210004</h1>
+    <p class="tagline">I Travel Around The World To Get The Best Photos.!</p>
+    <p class="sub">Photographer / Cinematographer / Writer</p>
+
+  </div>
+
+  <div class="filter-tabs">
+    <button class="active">All</button>
+    <button>Landscape</button>
+    <button>Portrait</button>
+    <button>Wedding</button>
+  </div>
+
+  <div class="container-fluid px-2">
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="Aset/meng1.jpg" alt="lov u"></div>
+      <div class="gallery-item"><img src="Aset/meng2.jpg" alt="hehe"></div>
+      <div class="gallery-item"><img src="Aset/meng3.jpg" alt="mwehehe"></div>
+      <div class="gallery-item"><img src="Aset/meng4.jpg" alt="luv u"></div>
+      <div class="gallery-item"><img src="Aset/meng5.jpg" alt="eum"></div>
+      <div class="gallery-item"><img src="Aset/meng6.jpg" alt="huh"></div>
+      <div class="gallery-item"><img src="Aset/meng7.jpg" alt="zzz"></div>
+      <div class="gallery-item"><img src="Aset/meng8.jpg" alt="huhh"></div>
+      <div class="gallery-item"><img src="Aset/meng9.jpg" alt="yeah"></div>
+      <div class="gallery-item"><img src="Aset/meng10.jpg" alt="aaaa"></div>
+      <div class="gallery-item"><img src="Aset/meng11.jpg" alt="hmm"></div>
+      <div class="gallery-item"><img src="Aset/meng12.jpg" alt="asnkdjwb"></div>
+      <div class="gallery-item"><img src="Aset/meng13.jpg" alt="what!"></div>
+      <div class="gallery-item"><img src="Aset/meng14.jpg" alt="chil bro"></div>
+      <div class="gallery-item"><img src="Aset/meng15.jpg" alt="huft"></div>
+      <div class="gallery-item"><img src="Aset/meng16.jpg" alt="wleee"></div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="brand">MeowGraphy</div>
+    <div class="copy">© Copyright 2026. All Rights Reserved.</div>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-500px"></i></a>
+      <a href="#"><i class="fab fa-behance"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fas fa-camera"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+  </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.querySelectorAll('.filter-tabs button').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.filter-tabs button').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function() {
+      document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active-nav'));
+      this.classList.add('active-nav');
+    });
+  });
+</script>
+</body>
+</html>
